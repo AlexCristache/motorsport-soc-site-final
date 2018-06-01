@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  if event
+    div.main
+      h2 Create Event
+      form(action="/events/" + event.event_id + "/edit",method='post', name='myform')
+        input(type='hidden', name='_csrf', value=csrf)
+        input(type='text', name='title', value=event.title, required)
+        input(type='date', name='date', value=event.date, required)
+        input(type='text', name='description', value=event.description)
+        input(type='submit', value='Update')

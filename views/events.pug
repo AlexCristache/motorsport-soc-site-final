@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  img#svg_racetrack(src="/images/racetrack.svg" alt="svg_racetrack" style="width:100%;")
+  if user && user.is_admin
+    a.submit_event_dark.center_new_event(href="/events/create"): i.fa.fa-plus  New Event
+  each event in events
+    div.card
+      div.card_container
+        ul
+          li.event_name= event.title
+          li.event_name= event.date
+          li.event_name= event.description
+      if user
+        if !event.isFollowed
+          form.inline(action="/events/" + event.event_id + "/follow", method='post')
+            input(type='hidden', name='_csrf', value=csrf)
+            button.submit_event_bright(type='submit'): i.fa.fa-bell  Follow
+        else 
+          form.inline(action="/events/" + event.event_id + "/unfollow", method='post')
+            input(type='hidden', name='_csrf', value=csrf)
+            button.submit_event_bright(type='submit'): i.fa.fa-bell-slash  Unfollow
+        if user.is_admin
+          form.inline(action="/events/" + event.event_id + "/edit", method="get")
+            input(type='hidden', name='_csrf', value=csrf)
+            button.submit_event_bright(type='submit'): i.fa.fa-edit  Edit
+          form.inline(action="/events/" + event.event_id + "/delete", method='post', name='myform')
+            input(type='hidden', name='_csrf', value=csrf)
+            button.submit_event_dark(type='submit', value="Delete"): i.fa.fa-trash-o  Delete

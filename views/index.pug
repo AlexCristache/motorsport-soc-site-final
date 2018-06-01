@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  link(rel="stylesheet", href="/stylesheets/home.css")
+  
+  div.inl(class="slideshow-container")
+
+    div.mySlides.fade
+      img(src="/images/IMG_1.JPG" alt="IMG_1" style="width:100%")
+    
+    div.mySlides.fade
+      img(src="/images/IMG_2.JPG" alt="IMG_2" style="width:100%")
+    
+    div.mySlides.fade
+      img(src="/images/IMG_3.JPG" alt="IMG_3" style="width:100%")
+        
+    div.mySlides.fade
+      img(src="/images/IMG_4.JPG" alt="IMG_4" style="width:100%")
+    
+    div.mySlides.fade
+      img(src="/images/IMG_5.JPG" alt="IMG_5" style="width:100%")
+    
+    div.mySlides.fade
+      img(src="/images/IMG_6.JPG" alt="IMG_6" style="width:100%")
+            
+    div.mySlides.fade
+      img(src="/images/IMG_7.JPG" alt="IMG_7" style="width:100%")
+    
+    div.mySlides.fade
+      img(src="/images/IMG_8.JPG" alt="IMG_8" style="width:100%")
+    
+    div.mySlides.fade
+      img(src="/images/IMG_9.JPG" alt="IMG_9" style="width:100%")
+  
+  button.inl#join(onclick="location.href='/login'"): i.fa.fa-users JOIN US 
+    //- a(href='/login')
+    
+  script(type='text/javascript', src='/javascripts/home.js')

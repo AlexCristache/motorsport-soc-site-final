@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  if user && user.is_admin
+    form(action = '/gallery/upload', method = "POST", enctype = "multipart/form-data")
+      input(type='hidden', name='_csrf', value=csrf)
+      input(type = "file", name = "image")
+      button(type = "submit", value = "upload") Submit
+   
+  div.row2
+    if images
+      each image in images 
+        div.column2
+          img.gallery(src=image.path, onclick="openModal();currentSlide(" + image.id + ")" alt="" class="hover-shadow")
+          if user && user.is_admin  
+            form.inline(action="/gallery/" + image.id + "/delete", method='post', name='myform')
+              input(type='hidden', name='_csrf', value=csrf)
+              button.submit_event_dark(type='submit', value="Delete"): i.fa.fa-trash-o
+  
+  div.modal#myModal
+    span.close.cursor(onclick="closeModal()") &times;
+    div.modal-content
+      if images
+        each image in images
+          div.mySlides
+            div.numbertext #{image.id} / #{images.length}
+              img.preview(src=image.path, style="width:100%", alt="")
+    
+    a.prev(onclick="plusSlides(-1)") &#10094;
+    a.next(onclick="plusSlides(1)") &#10095;
+  
+  script(type='text/javascript', src='/javascripts/preview.js')

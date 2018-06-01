@@ -1,0 +1,68 @@
+#posts {
+    font-family: 'Ubuntu';
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+#posts td, #posts th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#posts tr:nth-child(even){background-color: #f2f2f2;}
+
+#posts tr:hover {background-color: #ddd;}
+
+#posts th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #c02a36;
+    color: white;
+}
+
+.submit_post_bright{
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(#ffffff 1%, #ffffff 100%);
+  border: 1px solid #c02a36;
+  margin-top: 35px;
+  margin-bottom: 55px;
+  /* margin-left: 1vw; */
+  color: #c02a36;
+  font-weight: bold;
+  cursor: pointer;
+  width: 55%;
+  border-radius: 5px;
+  padding: 10px 0;
+  outline:none;
+}
+
+.submit_post_bright:hover{
+  background: linear-gradient(#ffffff 1%, #ffffff 100%);
+  color : #000000;
+}
+
+.submit_post_dark{
+  font-weight: bold;
+  font-size: 16px;
+  background: linear-gradient(#ffffff 1%, #ffffff 100%);
+  border: 1px solid #c02a36;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  /* margin-left: 1vw; */
+  color: #c02a36;
+  font-weight: bold;
+  cursor: pointer;
+  width: 55%;
+  min-width: 20px;
+  border-radius: 5px;
+  padding: 10px 0;
+  outline:none;
+}
+
+.submit_post_dark:hover{
+  background: linear-gradient(#ffffff 1%, #ffffff 100%);
+  color : #000000;
+}

@@ -1,0 +1,15 @@
+extends layout
+
+block content  
+  if user
+    div.main.log_form
+      h2 My Info
+      form(method='post', action="/user/" + user.user_id, name='myform')
+        input(type='hidden', name='_csrf', value=csrf)
+        input(type='text', name='fullname', value = user.full_name, required)
+        input(type='text', name='username', value = user.username, autocomplete="off", required)
+        input(type='text', name='email', value = user.email, autocomplete="off", required)
+        input(type='password', name='old_password', placeholder = 'Old Password', autocomplete="off", required)
+        input(type='password', name='new_password', placeholder = 'New Password', autocomplete="off", required)
+        input(type='password', name='new_r_password', placeholder = 'Re-Type Password', autocomplete="off", required)
+        input(type='submit', value='Update')

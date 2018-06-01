@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/stylesheets/menu_bar.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/events.css')
+    link(rel='stylesheet', href='/stylesheets/side_nav.css')
+    link(rel='stylesheet', href='/stylesheets/about.css')
+    link(rel='stylesheet', href='/stylesheets/preview.css')
+    link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='shortcut icon', href='https://s3-eu-west-1.amazonaws.com/nusdigital/group/images/8726/medium/bristol-red.jpg')
+  body
+    div(class=show_turometer ? 'blur' : '')#content
+      script(type='text/javascript', src='/javascripts/unblur.js')
+      //- button#show_turometer #{show_turometer}
+      header
+        section
+          //- a(href="/users")
+            img(src="https://scontent.flcy1-1.fna.fbcdn.net/v/t1.0-9/30706868_1970571973015705_4263449339923267584_n.jpg?_nc_cat=0&oh=101ab9b94d51bd7281968cf5fbd1fa48&oe=5B70F335")
+          //- label(for="toggle-1", class="toggle-menu")
+          a(href='/home'): img#img_menu_bar(src='/images/university-of-bristol-logo-final.png' alt="logo_bar")
+          label.toggle-menu(for='toggle-1'): i.fa.fa-bars
+          input#toggle-1(type='checkbox')
+          nav
+            ul
+              li: a(href='/events'): i.fa.fa-calendar  Events
+              li: a(href='/about'): i.fa.fa-user  About
+              li: a(href='/forum'): i.fa.fa-thumb-tack  Forum
+              li: a(href='/gallery'): i.fa.fa-picture-o  Gallery
+              li: a(href='/contact'): i.fa.fa-phone  Contact
+              if !user
+                li: a(href='/login'): i.fa.fa-lock  Login
+              else
+                li: a(href='/logout'): i.fa.fa-sign-out  Logout
+              //- li: a(href='/login'): i.fa.fa-lock  Login
+              if user
+                li: a(onclick="openNav()"): i.fa.fa-user-circle-o
+      
+      div.sidenav#mySidenav
+        a.closebtn(href="javascript:void(0)", onclick="closeNav()") &times;
+        span.user_logo: i.fa.fa-user-circle-o
+        if user
+          a #{user.full_name}
+          a(href="/user/" + user.user_id) My Profile
+          a(href="/user/" + user.user_id + "/events") My Events
+          a(href="/user/" + user.user_id + "/posts") My Posts
+          if user.is_admin
+            a(href="/contact/messages") Messages
+          a(href="/logout") Log out
+        //- span(style="font-size:30px;cursor:pointer", onclick="openNav()"): i.fa.fa-user-circle-o  Open        
+      script(type='text/javascript', src='/javascripts/sidenav.js')
+      div#main
+        div.container
+          block content
+    if show_turometer
+      div#turometer
+        img#img_menu_bar(src="/images/turometer.svg" alt="svg_turometer" style="width: 550px;height:550px;position: absolute;")
+  footer.footer
+    p.footerP 
+      a(href="https://www.facebook.com/AbbittMotorsport/")
+        img.logos#logo1(src="/images/abbitt_logo.png" alt="logo_1")
+      a(href="https://www.absolutely-karting.co.uk/bristol/")
+        img.logos#logo2(src="/images/absolut_karting_logo.png" alt="logo_2")
+      a(href="https://www.team-sport.co.uk/")
+        img.logos#logo3(src="/images/team_sport.png" alt="logo_3")
+      a(href="http://www.allstarssportsbars.co.uk/bristol/")
+        img.logos#logo4(src="/images/allstars_logo.png" alt="logo_4")
+    h3.logos#textfooter  © Tudor Petrescu & Alexandru Cristache 2018 ©

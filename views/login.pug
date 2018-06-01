@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  if user
+    h2 You are logged in as #{user.full_name}
+
+  if !user
+    h2 Become one of us !
+    div.main.log_form
+      h2 Login
+      form(method='post', name='myform')
+        input(type='hidden', name='_csrf', value=csrf)
+        input(type='text', name='username', placeholder='Username', required)
+        input(type='password', name='password', placeholder='Password', autocomplete="off", required)
+        input(type='submit', value='Login')
+          
+    div.main.log_form
+      h2 Signup Form
+      form(method='post', action="/signup/submit", name='myform')
+        input(type='hidden', name='_csrf', value=csrf)
+        input(type='text', name='fullname', placeholder='Full Name', required)
+        input(type='text', name='username', placeholder='Username', required)
+        input(type='text', name='email', placeholder='Email', autocomplete="off", required)
+        input(type='password', name='password', placeholder='Password', autocomplete="off", required)
+        input(type='password', name='r_password', placeholder='Re-Type Password', autocomplete="off", required)
+        input(type='submit', value='SignUp')

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  each message in messages
+    div.card_messages
+      div.card_container
+        ul
+          li.event_name= message.full_name
+          li.event_name= message.date
+          li.event_name= message.subject
+    

@@ -1,0 +1,80 @@
+html {
+  box-sizing: border-box;
+  background:#ffc600;
+  font-family:'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+}
+body {
+  margin: 0;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a { color: inherit;
+    text-decoration: none;
+  }
+
+.panels {
+  min-height:100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.panel {
+  background:#6B0F9C;
+  box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+  color:white;
+  text-align: center;
+  align-items:center;
+  transition:
+    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    background 0.2s;
+  font-size: 20px;
+  background-size:cover;
+  background-position:center;
+  flex : 1;
+  justify-content: center;
+  align-items: center;
+  display : flex;
+  flex-direction: column;
+}
+
+
+.panel1 { background-image:url(https://scontent.fsbz1-2.fna.fbcdn.net/v/t31.0-8/16601677_10154593858029864_1544963626079590081_o.jpg?_nc_cat=0&oh=51d16ba85b4981df33310a902ecbab91&oe=5B678933); }
+.panel2 { background-image:url(https://scontent.fsbz1-2.fna.fbcdn.net/v/t31.0-8/29060967_10155739313999864_2131626338805862676_o.jpg?_nc_cat=0&oh=b563a8065ff203df4763a55cca98b7cf&oe=5B30CAD4); }
+.panel3 { background-image:url(https://scontent.fsbz1-2.fna.fbcdn.net/v/t1.0-9/29513147_10155739351264864_4466003936767700463_n.jpg?_nc_cat=0&oh=a90e0b5789fc89993bd34f8cbbe2f7ba&oe=5B723340); }
+.panel4 { background-image:url(https://scontent.fsbz1-2.fna.fbcdn.net/v/t31.0-8/28619621_10155697771464864_5135019880415373246_o.jpg?_nc_cat=0&oh=c6060078dcc76b540abe8c2390c5eda4&oe=5B34E4CD); }
+.panel5 { background-image:url(https://scontent.fsbz1-2.fna.fbcdn.net/v/t31.0-8/14379737_10153915584417596_8921465568646304285_o.jpg?_nc_cat=0&oh=2b76db884ecdd54cd9f669af5cd085fc&oe=5B380D80); }
+
+.panel > * {
+  margin:0;
+  width: 100%;
+  transition:transform 0.5s;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel > *:first-child { transform: translateY(-100%);}
+.panel.open-active > *:first-child {transform: translateY(0);}
+.panel > *:last-child { transform: translateY(100%);}
+.panel.open-active > *:last-child {transform: translateY(0);}
+
+.panel p {
+  text-transform: uppercase;
+  font-family: 'Amatic SC', cubic;
+  text-shadow:0 0 14px rgba(0, 0, 0, 5.72), 0 0 24px rgba(0, 0, 0, 5.45);
+  font-size: 2em;
+}
+.panel p:nth-child(2) {
+  font-size: 4em;
+}
+
+.panel.open {
+  flex: 5;
+  font-size:40px;
+}

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  link(rel="stylesheet", href="/stylesheets/forum_post.css")
+
+  div.intro
+    h1.post-title.txt #{post.title}
+  div.post-content
+    p.txt #{post.content}
+  
+  if replies
+    each reply in replies
+      div.dialogbox
+        img.user-image(src="/images/user-placeholder.png" alt="")
+        p.author_reply #{reply.author}
+        div.body
+          span.tip.tip-left
+          div.message
+            p.reply #{reply.content}
+  if user          
+    div
+      form#reply_message(action="/forum/post/" + post.id + "/reply", method="post")
+        h3 Message
+        textarea(name="content", rows="6", cols="75")
+        input(type='hidden', name='_csrf', value=csrf)
+        button#submit_reply(type="submit"): i.fa.fa-paper-plane
+
+    

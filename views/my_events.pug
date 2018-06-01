@@ -1,0 +1,15 @@
+extends layout
+
+block content  
+  if user
+    each event in events
+      if event
+        div.card
+          div.card_container
+            ul
+              li.event_name= event.title
+              li.event_name= event.date
+              li.event_name= event.description
+          form.inline(action="/user/" + user.user_id + "/events/" + event.event_id + "/unfollow", method='post')
+            input(type='hidden', name='_csrf', value=csrf)
+            button.submit_event_bright(type='submit'): i.fa.fa-bell-slash  Unfollow

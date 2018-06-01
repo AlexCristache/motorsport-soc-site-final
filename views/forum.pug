@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  link(rel="stylesheet", href="/stylesheets/forum_form.css")
+  img#svg_trophy(src="/images/trophy.svg" alt="svg_trophy" style="width:100%;height:100%")
+  
+  if posts
+    div.container
+      table#posts(style = "width:100%;")
+        tr
+          th.txt Title
+          th.txt Posted by
+          th.txt Date
+          if user  
+            th: button.submit_post_dark(onclick="location.href='/forum/write'"): i.fa.fa-plus
+        each post in posts
+          tr.post_box
+            td.post_box.txt: a(href = "/forum/post/" + post.id) #{post.title}
+            td.post_box.txt= post.user_name
+            td.post_box.txt= post.date
+            if user && post.user_id == user.user_id || user && user.is_admin
+              td
+                form.inline(action="/forum/" + post.id + "/delete", method='post', name='myform')
+                  input(type='hidden', name='_csrf', value=csrf)
+                  button.submit_post_dark(type='submit', value="Delete"): i.fa.fa-trash-o

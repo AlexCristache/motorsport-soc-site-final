@@ -1,0 +1,211 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Ubuntu';
+  /* background-color:white; */
+  background='/images/check_flag.jpg'
+  color:#fff;
+}
+
+#img_menu_bar {
+  float: left;
+  margin-left:3px;
+  width: 250px;
+  height: 70px;
+  /* background: #555; */
+}
+
+section {
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  margin: 0 auto;
+  display: table;
+  position: relative;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin:150px auto;
+  display: table;
+  font-size: 26px;
+  padding: 40px 0px;
+  text-align: center;
+}
+
+h1 span { font-weight: 500; }
+
+header {
+  width: 100%;
+  display: table;
+  /* background-color: #ffffff; */
+  margin-bottom: 50px;
+  padding: 20px 0px;
+}
+
+#logo {
+  float: left;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #c02a36;
+  font-weight: 600;
+  padding: 20px 0px;
+}
+
+nav {
+  width: auto;
+  float: right;
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); */
+}
+
+nav ul {
+  display: table;
+  float: right;
+}
+
+nav ul li { float: left; }
+
+nav ul li:last-child { padding-right: 0px; }
+
+nav ul li a {
+  color: #c02a36;
+  font-size: 19px;
+  padding: 25px 20px;
+  display: inline-block;
+  transition: all 0.5s ease 0s;
+}
+
+nav ul li a:hover {
+  background-color: #c02a36;
+  color: #000000;
+  transition: all 0.5s ease 0s;
+}
+
+nav ul li a:hover i {
+  color: #000000;
+  transition: all 0.5s ease 0s;
+}
+
+nav ul li a i {
+  padding-right: 10px;
+  color: #c02a36;
+  transition: all 0.5s ease 0s;
+}
+
+.toggle-menu ul {
+  display: table;
+  width: 25px;
+  margin-top: 17px;
+  margin-right: 15px;
+}
+
+.toggle-menu ul li {
+  width: 100%;
+  height: 3px;
+  background-color: #c02a36;
+  margin-bottom: 4px;
+}
+
+.toggle-menu ul li:last-child { margin-bottom: 0px; }
+
+input[type=checkbox], label { display: none; }
+ @media only screen and (max-width: 2048px) {
+
+section { max-width: 95%; }
+}
+ @media only screen and (max-width: 1150px) {
+
+header { padding: 20px 0px; }
+
+#logo { padding: 0px; }
+
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  background: none;
+}
+input[type=checkbox]:fous {
+background:none;
+}
+
+label {
+  float: right;
+  padding: 8px 0px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked ~ nav { display: block; }
+
+nav {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 53px;
+  background-color: #c02a36;
+  padding: 0px;
+  z-index: 99;
+}
+
+nav ul { width: auto; }
+
+nav ul li {
+  float: none;
+  padding: 0px;
+  width: 100%;
+  display: table;
+}
+
+nav ul li a {
+  color: #FFF;
+  font-size: 15px;
+  padding: 10px 20px;
+  display: block;
+  border-bottom: 1px solid rgba(225,225,225,0.1);
+}
+
+nav ul li a i {
+  color: #ffffff;
+  padding-right: 13px;
+}
+}
+ @media only screen and (max-width: 568px) {
+
+h1 { padding: 25px 0px; }
+
+h1 span { display: block; }
+}
+ @media only screen and (max-width: 480px) {
+
+section { max-width: 90%; }
+}
+ @media only screen and (max-width: 360px) {
+
+h1 { font-size: 20px; }
+
+label { padding: 5px 0px; }
+
+#logo { font-size: 20px; }
+
+nav { top: 47px; }
+}
+ @media only screen and (max-width: 320px) {
+
+h1 { padding: 20px 0px; }
+}
+
+i.fa.fa-bars{
+  color:#c02a36;
+  margin-top: 3vh;
+  margin-right: 3vw;
+}

@@ -1,0 +1,119 @@
+.card {
+    border-radius: 15px;
+    background: url("/images/event_bkg.jpg");
+    background-repeat: no-repeat;
+    /* background-size: 55vw 50vh; */
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 70%;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: darkred;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card_messages {
+    border-radius: 15px;
+    /* background: url("/images/event_bkg.jpg"); */
+    background-repeat: no-repeat;
+    /* background-size: 900px 720px; */
+    background-size: 55vw 50vw;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 70%;
+    height: 50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: darkred;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card_container {
+    padding: 2px 16px;
+    text-shadow: 0.1em 0.1em 0.2em black
+}
+
+.inline {
+   display:inline-block;
+   /* margin-right:5px; */
+   width: 30%;
+}
+
+.submit_event_bright{
+font-size: 16px;
+font-weight: bold;
+background: linear-gradient(#ffffff 1%, #ffffff 100%);
+border: 1px solid #c02a36;
+margin-top: 35px;
+margin-bottom: 55px;
+margin-left: 2vw;
+color: #c02a36;
+font-weight: bold;
+cursor: pointer;
+width: 55%;
+border-radius: 5px;
+padding: 10px 0;
+outline:none;
+}
+
+.submit_event_bright:hover{
+background: linear-gradient(#ffffff 1%, #ffffff 100%);
+color : #000000;
+}
+
+.submit_event_dark{
+font-weight: bold;
+font-size: 16px;
+background: linear-gradient(#ffffff 1%, #ffffff 100%);
+border: 1px solid #c02a36;
+margin-top: 35px;
+margin-bottom: 15px;
+margin-left: 2vw;
+color: #c02a36;
+font-weight: bold;
+cursor: pointer;
+width: 55%;
+border-radius: 5px;
+padding: 10px 0;
+outline:none;
+}
+
+.submit_event_dark:hover{
+background: linear-gradient(#ffffff 1%, #ffffff 100%);
+color : #000000;
+}
+
+.event_name{
+  margin-top: 25px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+.center_new_event{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 9%;
+}
+
+#svg_racetrack{
+  /* width:70vw; */
+  margin-top: -215px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

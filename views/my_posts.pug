@@ -1,0 +1,23 @@
+extends layout
+
+block content  
+  if posts
+    div.container
+      table(style = "width:100%; ")
+        tr
+          th.txt Title
+          th.txt Posted by
+          th.txt Date
+          th.txt 
+          //- if user  
+          //-   th: button.submit_event_dark(onclick="location.href='/forum/write'"): i.fa.fa-plus  New Post
+        each post in posts
+          tr
+            th.txt: a(href = "/forum/post/" + post.id) #{post.title}
+            th.txt= post.user_name
+            th.txt= post.date
+            th
+              if user
+                form.inline(action="/forum/" + post.id + "/delete", method='post', name='myform')
+                  input(type='hidden', name='_csrf', value=csrf)
+                  button.submit_event_dark(type='submit', value="Delete"): i.fa.fa-trash-o  Delete
